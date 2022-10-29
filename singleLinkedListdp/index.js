@@ -111,6 +111,8 @@ class LinkedList {
 	}
 }
 
+module.exports = LinkedList
+
 const list = new LinkedList()
 
 list.append(1)
