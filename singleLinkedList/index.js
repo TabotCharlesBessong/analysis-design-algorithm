@@ -99,7 +99,7 @@ class LinkedList {
 			return value;
 		} else {
 			let prev = this.head;
-      // while prev.next is an element and that element is not the element we are looking for  
+			// while prev.next is an element and that element is not the element we are looking for
 			while (prev.next && prev.next.value !== value) {
 				prev = prev.next;
 			}
@@ -111,6 +111,37 @@ class LinkedList {
 			}
 			return null;
 		}
+	}
+
+	search(value) {
+		if (this.isEmpty()) {
+			return -1;
+		}
+		let i = 0;
+		let curr = this.head;
+		while (curr) {
+			if (curr.value === value) {
+				return i;
+			}
+			curr = curr.next;
+			i++;
+			console.log("====================================");
+			console.log("\n The element is at position: ", i);
+			console.log("====================================");
+		}
+		return -1;
+	}
+
+	reverse() {
+		let prev = null;
+		let curr = this.head;
+		while (curr) {
+			let next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
+		}
+		this.head = prev;
 	}
 
 	print() {
@@ -141,8 +172,11 @@ l.insert(30,2)
 l.prepend(10);
 l.removeFrom(2);
 l.append(50)
-l.removeFrom(3)
+// l.removeFrom(3)
 l.append(30)
+l.search(50)
+l.print()
+l.reverse()
 l.removeValue(60)
 console.log(l.getSize());
 l.print();
