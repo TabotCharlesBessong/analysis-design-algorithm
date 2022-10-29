@@ -1,34 +1,58 @@
+
 class Node {
-  constructor(val){
-    this.val = val
-    this.next = null
+  constructor(value){
+    this.value = value
+    this.next = null 
   }
 }
 
-const a = new Node('A')
-const b = new Node('B')
-const c = new Node('C')
-const d = new Node("D");
-const e = new Node("E");
+class LinkedList {
+  constructor() {
+    this.head = null 
+    this.size = 0
+  }
 
-a.next = b 
-b.next = c
-c.next = d
-d.next = e
+  isEmpty() {
+    return this.size === 0
+  }
 
-const printList = (head) => {
-  let current = head
-  while(current !== null) {
-    console.log(current.val)
-    current = current.next
+  getSize() {
+    return this.size
+  }
+
+  prepend(value) {
+    const node = new Node(value)
+    if(this.isEmpty()) {
+      // if the list is empty , the new node will automatically become the head
+      this.head = node
+    }else{
+      // the new node will need to first have a ref by pointing the the current head and it will then become the new head
+      this.next = this.head
+      this.head = node
+    }
+    this.size++
+  }
+
+  print() {
+    if(this.isEmpty()){
+      console.log('The list is empty')
+    }else {
+      let curr = this.head 
+      let list = ''
+      while(curr) {
+        list +=`${curr.value}->`
+        curr = curr.next
+      }
+      console.log('====================================')
+      console.log(list)
+      console.log('====================================')
+    }
   }
 }
 
 
-// const printList = (head) => {
-//   if(head === null) return 
-//   console.log(head.val)
-//   printList(head.next)
-// }
+const l = new LinkedList()
 
-printList(a)
+l.prepend(20)
+console.log(l.getSize())
+l.print()
