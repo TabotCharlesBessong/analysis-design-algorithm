@@ -24,11 +24,6 @@ const printList = (head) => {
   }
 }
 
-// const printList = (head) => {
-	// if (head === null) return;
-	// console.log(head.val);
-	// printList(head.next);
-// };
 
 // const printList = (head) => {
 //   if(head === null) return 
