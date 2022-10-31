@@ -1,7 +1,4 @@
 
-from itertools import count
-
-
 class Solution:
   
   def solve(self,A):
