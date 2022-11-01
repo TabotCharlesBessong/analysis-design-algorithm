@@ -28,4 +28,23 @@ const howSum = (target,arr) => {
   return null
 }
 
+const howSumMemo = (target,array , memo={}) => {
+  if(target in memo) return memo[target]
+  if(target === 0) return []
+  if(target < 0) return null
+
+  for (let num of array) {
+    const remainder = target - num
+    const remainderResult = howSumMemo(remainder,array , memo)
+    if(remainderResult !== null) {
+      memo[target] = [...remainderResult , num]
+      return memo[target]
+    }
+  }
+
+  memo[target] = null
+  return null
+}
+
 console.log('How sum-->', howSum(7,[4,2,2,1]))
+console.log("How sum-->", howSumMemo(9, [4, 3, 3, 1]));
