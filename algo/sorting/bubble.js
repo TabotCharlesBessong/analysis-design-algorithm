@@ -9,6 +9,7 @@ const bubbleSortMin = (arr)=> {
 			}
 		}
 	}
+	return arr
 }
 
 console.log(
