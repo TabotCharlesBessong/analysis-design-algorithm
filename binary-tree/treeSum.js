@@ -43,3 +43,14 @@ const treeSum = (root) => {
 console.log("====================================");
 console.log(treeSum(a));
 console.log("====================================");
+
+// recursively calculate
+
+const treeSumRec = (root) => {
+  if (root === null) return 0
+  return root.val + treeSum(root.left) + treeSum(root.right)
+}
+
+console.log("====================================");
+console.log(treeSumRec(a));
+console.log("====================================");
