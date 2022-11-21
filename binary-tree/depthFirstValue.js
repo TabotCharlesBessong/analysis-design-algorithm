@@ -47,3 +47,7 @@ const depthFirstValueRec = (root) => {
   const rightV = depthFirstValueRec(root.right)
   return [root.val,...leftV,...rightV]
 }
+
+console.log('====================================');
+console.log(depthFirstValueRec(a));
+console.log('====================================');
