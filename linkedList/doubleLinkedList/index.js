@@ -1,6 +1,7 @@
 
 class Node {
 	constructor(value) {
+		// double linked list point to its 2 neighboring nodes
 		this.value = value;
 		this.prev = null;
 		this.next = null;
@@ -25,6 +26,7 @@ class DoublyLinkedList {
 	prepend(value) {
 		const node = new Node(value);
 		if (this.isEmpty()) {
+			// initially both the first node is the head and tail
 			this.head = node;
 			this.tail = node;
 		} else {
