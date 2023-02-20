@@ -1,6 +1,7 @@
 
 class Solution:
   
+#   We are dealing with a sorted list
   def maxp3(self,A):
     A = sorted(A)
     
